@@ -16,7 +16,6 @@ RUN apk update \
 RUN pip install --upgrade pip
 COPY ./requirements/dev.txt .
 RUN pip install -r dev.txt
-RUN pip install gunicorn
 
 COPY ./scripts/entrypoint.dev.sh .
 RUN sed -i 's/\r$//g' /usr/src/app/entrypoint.dev.sh
